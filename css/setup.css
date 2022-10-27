@@ -1,0 +1,133 @@
+
+/* https://www.paulirish.com/2012/box-sizing-border-box-ftw/ */
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+a {
+	display: block;
+	text-decoration: none;
+	color: inherit;
+}
+
+p a {
+	display: inline;
+	color: blue;
+	text-decoration: underline;
+}
+
+picture {
+	display: block;
+}
+
+img {
+	display: block;
+	width: 100%;
+	height: auto;
+}
+
+svg {
+  display: block;
+  width: 100%;
+  /* may need height: 100%; Check all browsers */
+}
+
+
+project-card a picture img {
+/*  height: 180px;
+  background-color: red;*/
+}
+
+
+
+:root {
+  --fluid-min-width: 320;
+  --fluid-max-width: 800;
+  --fluid-min-size: 14;
+  --fluid-max-size: 20;
+  --fluid-min-ratio: 1.2;
+  --fluid-max-ratio: 1.33;
+}
+
+:root {
+  --fluid-screen: 100vw;
+  --fluid-bp: calc((var(--fluid-screen) - ((var(--fluid-min-width) / 16) * 1rem)) / ((var(--fluid-max-width) / 16) - (var(--fluid-min-width) / 16)));
+}
+
+@media screen and (min-width: 800px) {
+  :root {
+    --fluid-screen: calc(var(--fluid-max-width) * 1px);
+  }
+}
+
+:root {
+  --fluid-min-scale-0: var(--fluid-min-ratio);
+  --fluid-min-scale-1: var(--fluid-min-scale-0) * var(--fluid-min-ratio);
+  --fluid-min-scale-2: var(--fluid-min-scale-1) * var(--fluid-min-ratio);
+  --fluid-min-scale-3: var(--fluid-min-scale-2) * var(--fluid-min-ratio);
+  --fluid-min-scale-4: var(--fluid-min-scale-3) * var(--fluid-min-ratio);
+
+
+
+  --fluid-max-scale-0: var(--fluid-max-ratio);
+  --fluid-max-scale-1: var(--fluid-max-scale-0) * var(--fluid-max-ratio);
+  --fluid-max-scale-2: var(--fluid-max-scale-1) * var(--fluid-max-ratio);
+  --fluid-max-scale-3: var(--fluid-max-scale-2) * var(--fluid-max-ratio);
+  --fluid-max-scale-4: var(--fluid-max-scale-3) * var(--fluid-max-ratio);
+
+
+
+  --fluid-min-size-0: (var(--fluid-min-size)) / 16;
+  --fluid-min-size-1: (var(--fluid-min-size) * var(--fluid-min-scale-0)) / 16;
+  --fluid-min-size-2: (var(--fluid-min-size) * var(--fluid-min-scale-1)) / 16;
+  --fluid-min-size-3: (var(--fluid-min-size) * var(--fluid-min-scale-2)) / 16;
+  --fluid-min-size-4: (var(--fluid-min-size) * var(--fluid-min-scale-3)) / 16;
+
+
+
+  --fluid-max-size-0: (var(--fluid-max-size)) / 16;
+  --fluid-max-size-1: (var(--fluid-max-size) * var(--fluid-max-scale-0)) / 16;
+  --fluid-max-size-2: (var(--fluid-max-size) * var(--fluid-max-scale-1)) / 16;
+  --fluid-max-size-3: (var(--fluid-max-size) * var(--fluid-max-scale-2)) / 16;
+  --fluid-max-size-4: (var(--fluid-max-size) * var(--fluid-max-scale-3)) / 16;
+
+
+
+
+  --fluid-0: calc(((var(--fluid-min-size-0) * 1rem) + (var(--fluid-max-size-0) - var(--fluid-min-size-0)) * var(--fluid-bp)));
+  --fluid-1: calc(((var(--fluid-min-size-1) * 1rem) + (var(--fluid-max-size-1) - var(--fluid-min-size-1)) * var(--fluid-bp)));
+  --fluid-2: calc(((var(--fluid-min-size-2) * 1rem) + (var(--fluid-max-size-2) - var(--fluid-min-size-2)) * var(--fluid-bp)));
+  --fluid-3: calc(((var(--fluid-min-size-3) * 1rem) + (var(--fluid-max-size-3) - var(--fluid-min-size-3)) * var(--fluid-bp)));
+  --fluid-4: calc(((var(--fluid-min-size-4) * 1.2rem) + (var(--fluid-max-size-4) - var(--fluid-min-size-4)) * var(--fluid-bp)));
+
+
+}
+
+
+:root {
+  --space-3xs: clamp(0.31rem, calc(0.29rem + 0.11vw), 0.38rem);
+  --space-2xs: clamp(0.69rem, calc(0.66rem + 0.11vw), 0.75rem);
+  --space-xs: clamp(1.00rem, calc(0.95rem + 0.23vw), 1.13rem);
+  --space-s: clamp(1.31rem, calc(1.24rem + 0.34vw), 1.50rem);
+  --space-m: clamp(2.00rem, calc(1.91rem + 0.45vw), 2.25rem);
+  --space-l: clamp(2.63rem, calc(2.49rem + 0.68vw), 3.00rem);
+  --space-xl: clamp(3.94rem, calc(3.73rem + 1.02vw), 4.50rem);
+  --space-2xl: clamp(5.25rem, calc(4.98rem + 1.36vw), 6.00rem);
+  --space-3xl: clamp(7.88rem, calc(7.47rem + 2.05vw), 9.00rem);
+
+  /* One-up pairs */
+  --space-3xs-2xs: clamp(0.31rem, calc(0.15rem + 0.80vw), 0.75rem);
+  --space-2xs-xs: clamp(0.69rem, calc(0.53rem + 0.80vw), 1.13rem);
+  --space-xs-s: clamp(1.00rem, calc(0.82rem + 0.91vw), 1.50rem);
+  --space-s-m: clamp(1.31rem, calc(0.97rem + 1.70vw), 2.25rem);
+  --space-m-l: clamp(2.00rem, calc(1.64rem + 1.82vw), 3.00rem);
+  --space-l-xl: clamp(2.63rem, calc(1.94rem + 3.41vw), 4.50rem);
+  --space-xl-2xl: clamp(3.94rem, calc(3.19rem + 3.75vw), 6.00rem);
+  --space-2xl-3xl: clamp(5.25rem, calc(3.89rem + 6.82vw), 9.00rem);
+
+  /* Custom pairs */
+  --space-s-l: clamp(1.31rem, calc(0.70rem + 3.07vw), 3.00rem);
+}

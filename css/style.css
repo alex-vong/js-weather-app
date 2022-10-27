@@ -1,0 +1,104 @@
+
+/* RESET */
+@import 'meyer-reset.css';
+@import 'setup.css';
+
+@import 'developer-styles.css'; 
+/* comment this ^ out - when you are ready */
+
+
+/* SETTINGS */
+@import 'settings.css'; /* variables/ etc */
+
+
+/* STRUCTURE */
+@import 'structure.css';
+
+
+/* TYPOGRAPHY */
+@import 'typography.css';
+
+
+/* COMPONENTS */
+@import 'components.css';
+
+
+
+
+/* SITE SECTIONS */
+
+body *  {
+	display: flex;
+	flex-direction: column;
+}
+
+/*.empty {
+	display:  none;
+}*/
+
+
+header {
+	display:  flex;
+	flex-direction: column;
+	justify-content: center;
+	text-align: center;
+	gap:  20px;
+
+	background-color: var(--foreground);
+
+	padding: 40px 10px;
+	color: var(--text);
+
+}
+
+header input {
+	padding: 10px;
+	width: 50%;
+}
+
+.search-box {
+	padding: 15px 0;
+}
+
+input {
+	padding: 10px;
+}
+
+input[type="text"],
+input[tyep="text"]:focus {
+	color: var(--black);
+	border: 1px solid var(--terms);
+	outline: none;
+}
+
+i {
+	cursor: pointer;
+}
+
+input[type="submit"], .modal button {
+	background-color: var(--button);
+    color: var(--text);
+    font-size: 16px;
+    font-weight: 900;
+    align-self: center;
+    padding: 15px 30px;
+    cursor:  pointer;
+    -webkit-appearance:  textfield;
+    -webkit-appearance:  none;
+    -webkit-border-fit:  border;
+    border: none;
+}
+
+form.add {
+	gap: 10px;
+}
+
+
+
+
+
+
+
+
+
+

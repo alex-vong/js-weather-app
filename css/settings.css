@@ -1,0 +1,23 @@
+body {
+    --black: #111111;
+    --white: #FFFFFF;
+    --color: #6D40F4;
+    --color: #494141;
+    --foreground: #233742;
+
+    --gray: #F2F2F2;
+    --alternate: #2D4881;
+    --background:  rgb(34,52,70);
+    --text:  #fff;
+    --terms: #8e8e8e;
+    --button:  #72c024;
+    --accent:  #5aae45;
+    --accent:  #c96727;
+
+    --error:  #d21224;
+    --pass:  #76AF3D;
+
+}
+
+
+

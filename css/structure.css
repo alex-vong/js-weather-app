@@ -1,0 +1,22 @@
+/* STRUCTURE */
+body {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh; /* for the footer */
+   background-color: var(--white);
+   color:  var(--color);
+   overflow-x: hidden;
+
+   -webkit-font-smoothing: antialiased;
+   list-style: none;
+} 
+
+
+
+inner-column {
+	display:  block;
+	width: min(90%, 900px); /* could be a variable in settings */
+	margin-right: auto;
+	margin-left: auto;
+}
+
