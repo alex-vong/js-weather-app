@@ -1,14 +1,14 @@
-
 /* RESET */
 @import 'meyer-reset.css';
 @import 'setup.css';
 
-@import 'developer-styles.css'; 
+@import 'developer-styles.css';
 /* comment this ^ out - when you are ready */
 
 
 /* SETTINGS */
-@import 'settings.css'; /* variables/ etc */
+@import 'settings.css';
+/* variables/ etc */
 
 
 /* STRUCTURE */
@@ -27,78 +27,91 @@
 
 /* SITE SECTIONS */
 
-body *  {
-	display: flex;
-	flex-direction: column;
+
+body {
+	    background-color: #fff;
+    height: 100vh;
+}
+body * {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    letter-spacing: 0.1rem;
 }
 
-/*.empty {
-	display:  none;
-}*/
 
 
-header {
-	display:  flex;
-	flex-direction: column;
-	justify-content: center;
-	text-align: center;
-	gap:  20px;
-
-	background-color: var(--foreground);
-
-	padding: 40px 10px;
-	color: var(--text);
+.container {
+    gap: 25px;
+    margin-top: 30px;
 
 }
 
-header input {
-	padding: 10px;
-	width: 50%;
+.weather-card {
+    border: 1px solid #a6a6a6;
+    outline: none;
+    -webkit-box-shadow: 0px 5px 13px 0px rgba(142, 142, 142, 0.88);
+    -moz-box-shadow: 0px 5px 13px 0px rgba(142, 142, 142, 0.88);
+    box-shadow: 0px 5px 13px 0px rgba(142, 142, 142, 0.88);
 }
 
-.search-box {
-	padding: 15px 0;
+picture{
+	outline: 1px solid var(--terms);
+
 }
+
+.change-location {
+	gap:  10px;
+}
+
+
+.weather-details {
+    gap: 5px;
+    margin: 20px 0;
+}
+
+.temp-container {
+    flex-direction: row;
+    justify-content: center;
+}
+
+.temp-container span.body-copy {
+	font-size: var(--fluid-3);
+}
+
+
 
 input {
-	padding: 10px;
+    padding: 10px;
 }
 
 input[type="text"],
-input[tyep="text"]:focus {
-	color: var(--black);
-	border: 1px solid var(--terms);
-	outline: none;
+input[type="text"]:focus {
+    color: var(--black);
+    border: 1px solid var(--terms);
+    padding: 8px;
+    outline: none;
 }
 
 i {
-	cursor: pointer;
+    cursor: pointer;
 }
 
-input[type="submit"], .modal button {
-	background-color: var(--button);
+input[type="submit"],
+.modal button {
+    background-color: var(--button);
     color: var(--text);
     font-size: 16px;
     font-weight: 900;
     align-self: center;
     padding: 15px 30px;
-    cursor:  pointer;
-    -webkit-appearance:  textfield;
-    -webkit-appearance:  none;
-    -webkit-border-fit:  border;
+    cursor: pointer;
+    -webkit-appearance: textfield;
+    -webkit-appearance: none;
+    -webkit-border-fit: border;
     border: none;
 }
 
 form.add {
-	gap: 10px;
+    gap: 10px;
 }
-
-
-
-
-
-
-
-
-
-
