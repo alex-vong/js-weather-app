@@ -20,9 +20,36 @@
 </head>
 
 <body>
-    
+    <section class="weather-app">
+        <inner-column>
+            <div class="container">
+                <h1 class="top-level-heading">Weather App</h1>
+                <form class="change-location">
+                    <label for="city">Where Would You Like Weather Info?</label>
+                    <input type="text" name="city" class= "search" placeholder="Enter a City">
+                </form>
+                <div class="weather-card">
+                    <picture>
+                        <img src="images/default-weather-img.svg" class="time card-img" alt="">
+                    </picture>
+                    <div class="icon">
+                        <!-- Icon -->
+                    </div>
+                    <div class="weather-details">
+                        <h3 class="fourth-level-heading">City Name</h3>
+                        <h4 class="body-copy">Weather Condition</h4>
+                        <div class="temp-container fourth-level-heading">
+                            <span class="body-copy">temp</span>
+                            <span class="body-copy">&deg;F</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </inner-column>
+    </section>
     <script src="http://cdn.date-fns.org/v1.9.0/date_fns.min.js"></script>
-    <script src="app.js"></script>
+    <script src="scripts/forecast.js"></script>
+    <script src="scripts/app.js"></script>
 </body>
 
 </html>
