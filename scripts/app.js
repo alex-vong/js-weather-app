@@ -1,5 +1,44 @@
 const cityForm = document.querySelector('form');
 
+const card = document.querySelector('.weather-card');
+const details = document.querySelector('.weather-details');
+
+const errorMsg = document.querySelector('.error-msg');
+
+
+const updateUI = (data) => {
+
+    const cityDetails = data.cityDetails;
+    const weather = data.weather;
+
+    //update details template
+
+    let state = '';
+
+    if (cityDetails.AdministrativeArea.CountryID === 'US') {
+        // state = cityDetails.AdministrativeArea.EnglishName;
+        state = cityDetails.AdministrativeArea.ID;
+        console.log(state);
+    } else {
+        state = cityDetails.Country.EnglishName;
+    }
+
+    details.innerHTML = `
+			<h3 class="fourth-level-heading">${cityDetails.EnglishName}, ${state}</h3>
+			<h4 class="body-copy">${weather.WeatherText}</h4>
+			<div class="temp-container fourth-level-heading">
+			    <span class="body-copy">${weather.Temperature.Imperial.Value}</span>
+			    <span class="body-copy">&deg;${weather.Temperature.Imperial.Unit}</span>
+			</div>
+
+	`;
+
+    errorMsg.style.display = 'none';
+
+    card.style.display = 'flex';
+
+
+}
 
 
 
@@ -28,6 +67,12 @@ cityForm.addEventListener('submit', e => {
     updateCity(city)
         .then(data => {
             console.log(data);
+            updateUI(data);
+
         })
-        .catch(error => console.log(error));
+        .catch(error => {
+            console.log(error);
+            errorMsg.style.display = 'flex';
+
+        });
 })
