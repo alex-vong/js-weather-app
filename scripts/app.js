@@ -34,7 +34,6 @@ const updateUI = (data) => {
 	`;
 
     errorMsg.style.display = 'none';
-
     card.style.display = 'flex';
 
 
@@ -72,7 +71,10 @@ cityForm.addEventListener('submit', e => {
         })
         .catch(error => {
             console.log(error);
+            card.style.display = 'none';
+
             errorMsg.style.display = 'flex';
+
 
         });
 })
