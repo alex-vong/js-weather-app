@@ -5,11 +5,24 @@ const details = document.querySelector('.weather-details');
 
 const errorMsg = document.querySelector('.error-msg');
 
+const time = document.querySelector('img.time');
+const icon = document.querySelector('.icon img');
+
+console.log(time);
+console.log(icon);
+
+
+
+
 
 const updateUI = (data) => {
 
+	console.log(data);
     const cityDetails = data.cityDetails;
     const weather = data.weather;
+    // console.log(weather);
+    // const weather = data.weather.DailyForecasts;
+
 
     //update details template
 
@@ -18,20 +31,39 @@ const updateUI = (data) => {
     if (cityDetails.AdministrativeArea.CountryID === 'US') {
         // state = cityDetails.AdministrativeArea.EnglishName;
         state = cityDetails.AdministrativeArea.ID;
-        console.log(state);
+
     } else {
         state = cityDetails.Country.EnglishName;
+
+
     }
 
-    details.innerHTML = `
-			<h3 class="fourth-level-heading">${cityDetails.EnglishName}, ${state}</h3>
-			<h4 class="body-copy">${weather.WeatherText}</h4>
-			<div class="temp-container fourth-level-heading">
-			    <span class="body-copy">${weather.Temperature.Imperial.Value}</span>
-			    <span class="body-copy">&deg;${weather.Temperature.Imperial.Unit}</span>
-			</div>
+      details.innerHTML = `
+				<h3 class="fourth-level-heading">${cityDetails.EnglishName}, ${state}</h3>
+				<h4 class="body-copy">${weather.WeatherText}</h4>
+				<div class="temp-container fourth-level-heading">
+				    <span class="body-copy">${weather.Temperature.Imperial.Value}</span>
+				    <span class="body-copy">&deg;${weather.Temperature.Imperial.Unit}</span>
+				</div>
 
 	`;
+
+	let timeSrc = null;
+
+	if(weather.IsDayTime) {
+		timeSrc = 'images/day.svg';
+	} else {
+		timeSrc = 'images/night.svg';
+
+	};
+
+	time.setAttribute('src', timeSrc);
+
+
+
+
+
+ 
 
     errorMsg.style.display = 'none';
     card.style.display = 'flex';
@@ -67,12 +99,10 @@ cityForm.addEventListener('submit', e => {
         .then(data => {
             console.log(data);
             updateUI(data);
-
         })
         .catch(error => {
             console.log(error);
             card.style.display = 'none';
-
             errorMsg.style.display = 'flex';
 
 
