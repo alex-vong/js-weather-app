@@ -1,6 +1,6 @@
 
 
-const key ='OLHxX7Jfgz4g1NdltnR0XUEfjGzxuIss';
+const key ='L8pYDs4DvUz5dcpjJlHXIRiHuy4FOCow';
 
 //get weather information
 
@@ -21,6 +21,25 @@ const getWeather = async (id) => {
 
 
 };
+
+const getForeCast = async (id) => {
+
+	// const base = 'http://dataservice.accuweather.com/currentconditions/v1/';
+	const base = 'http://dataservice.accuweather.com/forecasts/v1/daily/5day/';
+	const query = `${id}?apikey=${key}`;
+
+	const response = await fetch(base + query);
+
+
+	const data = await response.json();
+
+
+
+	return data;
+
+
+};
+
 
 
 // get city information
