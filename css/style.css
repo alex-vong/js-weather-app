@@ -209,13 +209,21 @@ ul li h3 {
     font-size: 24px;
 }
 
+ul li .day-of-week {
+	font-size: 24px;
+}
+
 li section {
     display: grid;
     grid-template-columns: 1fr 1fr;
 }
 
+.day, .night {
+	gap: 10px;
+}
+
 li section div {
-    gap: 5px;
+    gap: 3px;
 }
 
 li section p {
