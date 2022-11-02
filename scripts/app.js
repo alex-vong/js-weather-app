@@ -32,7 +32,7 @@ const updateUI = (data) => {
        <div class="weather-card">
        		<div class="weather-icon">
 	       		<picture>
-		            <img src="images/icons/${weather.WeatherIcon}.svg" class="time card-img" alt="default city">
+		            <img src="images/icons/${weather.WeatherIcon}.svg" class="time card-img" alt="default city wallpaper">
 		        </picture>
 	        	<h3 class="second-level-heading">${weather.WeatherText}</h3>
        		</div>
@@ -101,7 +101,7 @@ const updateUI = (data) => {
 	    		<section>
 		    		<div class="day">
 		    			<picture>
-		    				<img src="images/icons/${day.Day.Icon}.svg" alt="weather icon by artist: @starline https://www.freepik.com/author/starline">
+		    				<img src="images/icons/${day.Day.Icon}.svg" alt="weather icons by artist: @starline via https://www.freepik.com/author/starline">
 		    			</picture>	
 		    			<div class="day-of-week-text">	
 				    		<p>${dayCondition}</p>
