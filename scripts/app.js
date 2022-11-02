@@ -25,13 +25,9 @@ const updateUI = (data) => {
     let state = cityDetails.AdministrativeArea.CountryID === 'US' ? cityDetails.AdministrativeArea.ID : cityDetails.Country.EnglishName;
 
 
-    const date = new Date();
+    const date = new Date(weather.LocalObservationDateTime);
+    const dayOfWeek = date.toLocaleString("default", { weekday: "long" });
 
-    const todayDate = dateFns.format(date, 'dddd');
-    // console.log(todayDate);
-
-
-    // city.innerHTML = `<span>${cityDetails.EnglishName}, ${state}</span>`;
   card.innerHTML = `
        <div class="weather-card">
        		<div class="weather-icon">
@@ -42,7 +38,7 @@ const updateUI = (data) => {
        		</div>
 
 	        <div class="weather-details">
-    			<p class="fourth-level-heading">${todayDate}</p>
+    			<p class="fourth-level-heading">${dayOfWeek}</p>
     			<h2 class="second-level-heading">${cityDetails.EnglishName}, ${state}</h2>
 				<div class="temp-container main-temp">
 				    <span class="body-copy">${weather.Temperature.Imperial.Value}&deg;</span>
@@ -65,19 +61,7 @@ const updateUI = (data) => {
     	body.classList.remove('day-time');
     }
 
-    // if (weather.IsDayTime && window.innerWidth < 700 ) {
-    //     bodyImg = 'images/day-time-mobile.svg';
-    // } else if (weather.IsDayTime && window.innerWidth > 700) {
-    //     bodyImg = 'images/day-time-dt.png';
-    // } else if (!weather.IsDayTime && window.innerWidth < 700) {
-    //     bodyImg = 'images/night-time-mobile.svg';
-    // } else {
-    //     bodyImg = 'images/night-time-dt-2.svg';
-    // };
 
-
-    // body.style.backgroundImage = `url('${bodyImg}')`;
-    // time.setAttribute('src', timeSrc);
     errorMsg.style.display = 'none';
     card.style.display = 'flex';
 
@@ -88,9 +72,7 @@ const updateUI = (data) => {
 
 
     forecast.DailyForecasts.forEach( day => {
-    	const getToday = new Date(day.Date);
-    	const setToday = (dateFns.format(getToday, 'ddd'));
-
+    	
 
     	//capitlizie first word of each sentence
 		const getDayConditions = day.Day.IconPhrase;
@@ -109,24 +91,31 @@ const updateUI = (data) => {
 		}
 		const nightCondition = setNightCondition.join(" ");
 		
+		const date = new Date(day.Date);
+    	const dayOfWeek = date.toLocaleString("default", { weekday: "long" });
+    	console.log(dayOfWeek);
 
     	const html = `
 	    	<li>
-	    		<h3>${setToday}</h3>
+	    		<p class="day-of-week"> ${dayOfWeek}</p>
 	    		<section>
 		    		<div class="day">
 		    			<picture>
 		    				<img src="images/icons/${day.Day.Icon}.svg" alt="weather icon">
 		    			</picture>	
-			    		<p>${dayCondition}</p>
-			    		<p class='degrees'>H: ${day.Temperature.Maximum.Value}&deg</p>
+		    			<div class="day-of-week-text">	
+				    		<p>${dayCondition}</p>
+				    		<p class='degrees'>H: ${day.Temperature.Maximum.Value}&deg</p>
+			    		</div>
 		    		</div>
 		    		 <div class="night">
 		    			<picture>
 		    				<img src="images/icons/${day.Night.Icon}.svg" alt="weather icon">
 		    			</picture>	
-			    		<p>${nightCondition}</p>
-			    		<p class='degrees'>L: ${day.Temperature.Minimum.Value}&deg</p>
+		    			<div class="day-of-week-text">	
+				    		<p>${nightCondition}</p>
+				    		<p class='degrees'>L: ${day.Temperature.Minimum.Value}&deg</p>
+			    		</div>
 		    		</div>
 	    		</section>
 
