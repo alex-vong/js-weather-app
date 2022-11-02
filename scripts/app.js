@@ -101,7 +101,7 @@ const updateUI = (data) => {
 	    		<section>
 		    		<div class="day">
 		    			<picture>
-		    				<img src="images/icons/${day.Day.Icon}.svg" alt="weather icon">
+		    				<img src="images/icons/${day.Day.Icon}.svg" alt="weather icon by artist: @starline https://www.freepik.com/author/starline">
 		    			</picture>	
 		    			<div class="day-of-week-text">	
 				    		<p>${dayCondition}</p>
