@@ -21,7 +21,7 @@ body {
 .second-level-heading {
 
     font-size: var(--fluid-3);
-    font-weight: bold;
+    /*font-weight: bold;*/
 }
 
 .third-level-heading {
