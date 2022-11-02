@@ -10,10 +10,7 @@
                 <g id="night-time-dt" transform="matrix(4.43508,0,0,1.47943,11360.4,-1198.91)">
                     <use xlink:href="#_Image2" x="0" y="0" width="1795px" height="1196px"/>
                 </g>
-                <g id="night-time-dt1" serif:id="night-time-dt" transform="matrix(3.29906e-16,-1.79723,5.38778,1.10049e-16,13074.2,3796.52)">
-                    <use xlink:href="#_Image2" x="0" y="0" width="1795px" height="1196px"/>
-                </g>
-                <g id="night-time-dt2" serif:id="night-time-dt" transform="matrix(3.29906e-16,-1.79723,5.38778,1.10049e-16,13074.2,4300.81)">
+                <g id="night-time-dt1" serif:id="night-time-dt" transform="matrix(6.66925,-1.52576e-32,-1.22061e-31,2.2247,7223.95,462.669)">
                     <use xlink:href="#_Image2" x="0" y="0" width="1795px" height="1196px"/>
                 </g>
             </g>
