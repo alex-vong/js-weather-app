@@ -29,9 +29,22 @@
 
 
 body {
-    background-color: var(--night);
-    background-color: #82B2E8;
+    /*background-color: var(--gray);*/
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
     height: 100vh;
+}
+
+body.day-time {
+    background-image: url('../images/day-time-mobile.svg');
+
+}
+
+body.night-time {
+    background-image: url('../images/night-time-mobile.svg');
 }
 
 body * {
@@ -41,26 +54,52 @@ body * {
     letter-spacing: 0.1rem;
 }
 
+masthead {
+    margin-top: 30px;
+    gap: 15px;
+}
+
+
+.night-time {
+    color: var(--white);
+}
 
 
 .container {
     gap: 25px;
     margin-top: 30px;
+    margin-bottom: 60px;
 
 }
 
 .weather-card {
-	display: none;
+    /*display: none;*/
+    gap: 10px;
+    padding: 20px 10px;
     /*border: 1px solid #a6a6a6;*/
     outline: none;
-/*    -webkit-box-shadow: 0px 5px 13px 0px rgba(142, 142, 142, 0.88);
-    -moz-box-shadow: 0px 5px 13px 0px rgba(142, 142, 142, 0.88);
-    box-shadow: 0px 5px 13px 0px rgba(142, 142, 142, 0.88);*/
+    background: rgba(255, 255, 255, 0.25);
+    /*background: rgb(19 19 19 / 25%);*/
+
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(6px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
 }
 
+.weather-card h2 {
+    font-weight: 600;
+}
+
+.weather-card .weather-icon {
+    gap: 20px;
+}
+
+
 .error-msg {
-	display: none;
-	color: var(--error);
+    display: none;
+    color: var(--error);
 }
 
 /*picture {
@@ -78,31 +117,51 @@ body * {
     margin: 20px 0;
 }
 
+.hi-low {
+    flex-direction: row;
+    gap: 5px;
+    align-self: center;
+}
+
+.hi-low span {
+    font-size: 1.2rem;
+}
+
 .temp-container {
     flex-direction: row;
     justify-content: center;
+    gap: 5px;
 }
 
 .temp-container span.body-copy {
-    font-size: var(--fluid-3);
+    font-size: 60px;
 }
 
-
-
-input {
-    padding: 10px;
+.input-box {
+    position: relative;
+    width: 70%;
+    align-self: center;
 }
 
 input[type="text"],
 input[type="text"]:focus {
     color: var(--black);
     border: 1px solid var(--terms);
-    padding: 8px;
+    padding: 12px;
     outline: none;
+    /*    min-width: 100%;
+    align-self: center;*/
+    border-radius: 50px;
+
 }
 
 i {
     cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 5%;
+    color: var(--terms);
 }
 
 input[type="submit"],
@@ -122,6 +181,96 @@ input[type="submit"],
 
 form.add {
     gap: 10px;
+}
+
+
+
+ul {
+    gap: 20px;
+}
+
+ul li {
+    gap: 15px;
+    padding: 20px 10px;
+    /*border: 1px solid #a6a6a6;*/
+    outline: none;
+    background: rgba(255, 255, 255, 0.25);
+    /*background: rgb(19 19 19 / 25%);*/
+
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(6px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+
+}
+
+ul li h3 {
+    font-size: 24px;
+}
+
+li section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+li section div {
+    gap: 5px;
+}
+
+li section p {
+    line-height: 1.2;
+}
+
+.degrees {
+    font-weight: 500;
+}
+
+.forecast img {
+    max-width: 80px;
+    margin: auto;
+}
+
+
+
+@media (min-width: 700px) {
+
+    .main-card .weather-card {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+
+        padding: 40px 20px;
+    }
+
+    .forecast ul {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+
+        grid-gap: 25px;
+    }
+
+
+    .weather-card .weather-icon img {
+        max-width: 300px;
+        margin: auto;
+    }
+
+    .weather-card .weather-icon h3 {
+        font-size: var(--fluid-1);
+    }
+
+    .weather-card .weather-details {
+        justify-content: center;
+    }
+
+    .forecast ul li:last-child {
+        grid-column: 1 / -1;
+        width: 70%;
+        margin: auto;
+    }
+
+}
+
 @media (min-width: 1000px) {
     body.day-time {
         background-image: url('../images/day-time-dt.png');
