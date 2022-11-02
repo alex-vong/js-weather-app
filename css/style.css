@@ -122,4 +122,12 @@ input[type="submit"],
 
 form.add {
     gap: 10px;
+@media (min-width: 1000px) {
+    body.day-time {
+        background-image: url('../images/day-time-dt.png');
+    }
+
+    body.night-time {
+        background-image: url('../images/night-time-dt-2.svg');
+    }
 }
