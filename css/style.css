@@ -152,6 +152,7 @@ input[type="text"]:focus {
     /*    min-width: 100%;
     align-self: center;*/
     border-radius: 50px;
+    font-size: 1rem;
 
 }
 
