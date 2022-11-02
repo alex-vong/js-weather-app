@@ -22,26 +22,24 @@
 <body>
     <section class="weather-app">
         <inner-column>
-            <div class="container">
+            <masthead>
                 <h1 class="top-level-heading">Weather App</h1>
                 <form class="change-location">
-                    <label for="city">Where Would You Like Weather Info?</label>
-                    <input type="text" name="city" class="search" placeholder="Enter a City">
+                    <div class="input-box">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <input type="text" name="city" class="search" placeholder="Enter a City">
+                    </div>
                 </form>
                 <div class="error-msg">
                     <h4 class="body-copy">Please Enter a Valid City</h4>
                 </div>
-                <div class="weather-card">
-                    <picture>
-                        <img src="images/default-weather-img.svg" class="time card-img" alt="default city">
-                    </picture>
-                    <div class="icon">
-                        <picture>
-                            <img src="" alt="">
-                        </picture>
-                    </div>
-                    <div class="weather-details">
-                    </div>
+            </masthead>
+            <div class="container">
+                <div class="main-card">
+
+                </div>
+                <div class="forecast">
+                    <ul></ul>
                 </div>
             </div>
         </inner-column>
