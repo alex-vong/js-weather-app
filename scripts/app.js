@@ -12,19 +12,11 @@ const icon = document.querySelector('.icon img');
 const city = document.querySelector('.city');
 const forecastUl = document.querySelector(".forecast ul");
 
-
-
-
-
-
 const updateUI = (data) => {
     const cityDetails = data.cityDetails;
     const weather = data.weather;
     const forecast = data.forecast;
-
     let state = cityDetails.AdministrativeArea.CountryID === 'US' ? cityDetails.AdministrativeArea.ID : cityDetails.Country.EnglishName;
-
-
     const date = new Date(weather.LocalObservationDateTime);
     const dayOfWeek = date.toLocaleString("default", { weekday: "long" });
 
@@ -61,19 +53,15 @@ const updateUI = (data) => {
     	body.classList.remove('day-time');
     }
 
-
     errorMsg.style.display = 'none';
     card.style.display = 'flex';
-
 
     if (forecastUl.innerHTML) {
    		forecastUl.innerHTML = '';
 	};
 
-
     forecast.DailyForecasts.forEach( day => {
     	
-
     	//capitlizie first word of each sentence
 		const getDayConditions = day.Day.IconPhrase;
 		const setDayCondition = getDayConditions.split(" ");
@@ -93,7 +81,6 @@ const updateUI = (data) => {
 		
 		const date = new Date(day.Date);
     	const dayOfWeek = date.toLocaleString("default", { weekday: "long" });
-    	console.log(dayOfWeek);
 
     	const html = `
 	    	<li>
@@ -119,14 +106,11 @@ const updateUI = (data) => {
 		    		</div>
 	    		</section>
 
-
 	    	</li>
 	    	`;
     	forecastUl.innerHTML += html;
     });
 };
-
-
 
 const updateCity = async (city) => {
     const cityDetails = await getCity(city);
@@ -141,15 +125,12 @@ const updateCity = async (city) => {
 };
 
 
-
 cityForm.addEventListener('submit', e => {
     //prevent default action
     e.preventDefault();
-
     //get city value
     const city = cityForm.city.value.trim();
     cityForm.reset(); //reset city form after submit
-
 
     //update ui with new city
     updateCity(city)
@@ -161,6 +142,5 @@ cityForm.addEventListener('submit', e => {
             console.log(error);
             card.style.display = 'none';
             errorMsg.style.display = 'flex';
-
         });
 })
