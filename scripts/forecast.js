@@ -9,7 +9,7 @@ const getWeather = async (id) => {
 	const query = `${id}?apikey=${key}`;
 	const response = await fetch(base + query);
 	const data = await response.json();
-	console.log(data[0]);
+
 	return data[0];
 
 };
@@ -33,7 +33,7 @@ const getCity = async (city) => { //callback asynchronous function taking in 'ho
 	const query = `?apikey=${key}&q=${city}`; //assigning api key and city into a query variable
 	const response = await fetch(base + query); //callback function using await operator to get back a promise
 	const data = await response.json(); //convert the promise into json and assign it to a variable 'data';
-	console.log(data);
+
 	return data[0]; //return data
 
 };
