@@ -12,6 +12,9 @@ const icon = document.querySelector('.icon img');
 const city = document.querySelector('.city');
 const forecastUl = document.querySelector(".forecast ul");
 
+
+
+
 const updateUI = (data) => {
     const cityDetails = data.cityDetails;
     const weather = data.weather;
@@ -112,7 +115,7 @@ const updateUI = (data) => {
     });
 };
 
-const updateCity = async (city) => {
+const getCityInfo = async (city) => {
     const cityDetails = await getCity(city);
     const weather = await getWeather(cityDetails.Key);
     const forecast = await getForeCast(cityDetails.Key);
@@ -125,15 +128,14 @@ const updateCity = async (city) => {
 };
 
 
-cityForm.addEventListener('submit', e => {
-    //prevent default action
-    e.preventDefault();
-    //get city value
-    const city = cityForm.city.value.trim();
+//it all starts here, sort of
+cityForm.addEventListener('submit', e => { //add an 'submit' event listener to the input
+    e.preventDefault(); //prevent default action
+    const city = cityForm.city.value.trim(); //grab the value of the input and trim off any spaces it might have
+    //and assign it to a variable of 'city'
     cityForm.reset(); //reset city form after submit
 
-    //update ui with new city
-    updateCity(city)
+    getCityInfo(city) //calls getCityInfo function and passes in city value as parameter
         .then(data => {
             console.log(data);
             updateUI(data);
