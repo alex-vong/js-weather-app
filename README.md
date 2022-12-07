@@ -11,7 +11,19 @@ I have been learning a lot on Asynchronous JavaScript, APIs, and call back funct
 * Update the UI with information including city name, daily weather temperature, highs and lows, current weather condition, date, and weather icon
 * Throw an error if the data could not be returned and props an error message if user mispells city or inputs a non-existent city
 
-## Links
+### Programming Languages
+* HTML
+* CSS
+* JavaScript
 
+
+### Tools
+* Window local Storage
+* Affinity Designer
+* Figma
+* Whimsical
+* MDN Documentation
+
+## Links
 You may view the project here [JS Weather App](https://alexvong.dev/modules/js-weather-app/).
 
