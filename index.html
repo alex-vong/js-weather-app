@@ -1,51 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-
+  <head>
     <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>WeatherAPP || AlexVongDev</title>
-        <meta name="og:description" content="A Project focusing on working with APIs" />
-        <meta property="og:title" content="Javascript Weather Site" />
-        <meta property="og:type" content="">
-        <meta property="og:url" content="">
-        <meta property="og:image" content="https://alexvong.dev/images/meta-img.png" />
-        <meta property="og:image:type" content="https://alexvong.dev/images/meta-img.png" />
-        <link rel="shortcut icon" type="image/jpg" href="images/favicon.svg" />
-        <link rel='stylesheet' href='css/style.css'>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>WeatherAPP || AlexVongDev</title>
+      <meta
+        name="og:description"
+        content="A Project focusing on working with APIs"
+      />
+      <meta property="og:title" content="Javascript Weather Site" />
+      <meta property="og:type" content="" />
+      <meta property="og:url" content="" />
+      <meta
+        property="og:image"
+        content="https://alexvong.dev/images/meta-img.png"
+      />
+      <meta
+        property="og:image:type"
+        content="https://alexvong.dev/images/meta-img.png"
+      />
+      <link rel="shortcut icon" type="image/jpg" href="images/favicon.svg" />
+      <link rel="stylesheet" href="css/style.css" />
+      <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+        crossorigin="anonymous"
+        referrerpolicy="no-referrer"
+      />
+      <script src="scripts/forecast.js" defer></script>
+      <script src="scripts/app.js" defer></script>
     </head>
-</head>
+  </head>
 
-<body>
+  <body>
     <section class="weather-app">
-        <inner-column>
-            <masthead>
-                <h1 class="top-level-heading">Weather App</h1>
-                <form class="change-location">
-                    <div class="input-box">
-                        <i class="fa-solid fa-magnifying-glass"></i>
-                        <input type="text" name="city" class="search" placeholder="Enter a City">
-                    </div>
-                </form>
-                <div class="error-msg">
-                    <h4 class="body-copy">Please Enter a Valid City</h4>
-                </div>
-            </masthead>
-            <div class="container">
-                <div class="main-card">
-
-                </div>
-                <div class="forecast">
-                    <ul></ul>
-                </div>
+      <inner-column>
+        <masthead>
+          <h1 class="top-level-heading">Weather App</h1>
+          <form class="change-location">
+            <div class="input-box">
+              <i class="fa-solid fa-magnifying-glass"></i>
+              <input
+                type="text"
+                name="city"
+                class="search"
+                placeholder="Enter a City"
+              />
             </div>
-        </inner-column>
+          </form>
+          <div class="error-msg">
+            <h4 class="body-copy">Please Enter a Valid City</h4>
+          </div>
+        </masthead>
+        <div class="container">
+          <div class="main-card"></div>
+          <div class="forecast">
+            <ul></ul>
+          </div>
+        </div>
+      </inner-column>
     </section>
-    <script src="scripts/forecast.js"></script>
-    <script src="scripts/app.js"></script>
-</body>
-
+  </body>
 </html>
