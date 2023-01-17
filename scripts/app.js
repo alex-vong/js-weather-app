@@ -46,7 +46,6 @@ const updateUI = (data) => {
         </div>
 	`;
 
-    // let bodyImg = '';
 
     if (weather.IsDayTime) {
     	body.classList.remove('night-time');
