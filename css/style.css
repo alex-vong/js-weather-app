@@ -102,11 +102,6 @@ masthead {
     color: var(--error);
 }
 
-/*picture {
-    outline: 1px solid var(--terms);
-
-}*/
-
 .change-location {
     gap: 10px;
 }
@@ -184,8 +179,6 @@ form.add {
     gap: 10px;
 }
 
-
-
 ul {
     gap: 20px;
 }
@@ -193,11 +186,8 @@ ul {
 ul li {
     gap: 15px;
     padding: 20px 10px;
-    /*border: 1px solid #a6a6a6;*/
     outline: none;
     background: rgba(255, 255, 255, 0.25);
-    /*background: rgb(19 19 19 / 25%);*/
-
     box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(6px);
